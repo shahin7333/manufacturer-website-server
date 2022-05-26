@@ -26,6 +26,14 @@ app.get('/tool',async(req,res)=>{
     res.send(tools)
 })
 
+app.get('/purchase',async (req,res)=>{
+    const customer=req.query.customer
+    const query={customer:customer}
+    const purchase=await purchaseCollection.find(query).toArray()
+    res.send(purchase)
+
+})
+
 app.post('/purchase',async(req,res)=>{
     const purchase=req.body
     const result=await purchaseCollection.insertOne(purchase)
