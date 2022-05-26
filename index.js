@@ -51,7 +51,7 @@ async function run() {
         const users=await userCollection.find().toArray()
         res.send(users)
     })
-
+// admin 
     app.get('/admin/:email',async(req,res)=>{
         const email=req.params.email
         const user=await userCollection.findOne({email:email})
