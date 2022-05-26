@@ -16,6 +16,7 @@ async function run(){
 try{
 await client.connect()
 const toolCollection=client.db('electricalSpark').collection('tools')
+const purchaseCollection=client.db('electricalSpark').collection('purchases')
 
 
 app.get('/tool',async(req,res)=>{
@@ -27,7 +28,7 @@ app.get('/tool',async(req,res)=>{
 
 app.post('/purchase',async(req,res)=>{
     const purchase=req.body
-    const result=await toolCollection.insertOne(purchase)
+    const result=await purchaseCollection.insertOne(purchase)
     res.send(result)
 })
 
