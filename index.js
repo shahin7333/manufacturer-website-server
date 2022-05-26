@@ -17,6 +17,7 @@ try{
 await client.connect()
 const toolCollection=client.db('electricalSpark').collection('tools')
 const purchaseCollection=client.db('electricalSpark').collection('purchases')
+const userCollection=client.db('electricalSpark').collection('users')
 
 
 app.get('/tool',async(req,res)=>{
